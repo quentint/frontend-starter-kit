@@ -27,8 +27,8 @@ var paths = {
 		dest: './scss/imports/'
 	},
 	html: {
-		src: ['./html/*.html']
-        toWatch: ['../dist/*.html']
+		src: ['./html/*.html'],
+		toWatch: ['../dist/*.html']
 	},
 	scripts: {
 		src: [
