@@ -38,6 +38,12 @@ var paths = {
 		dest: '../dist/js/',
 		minFileName: 'script.min.js',
 		maxFileName: 'script.max.js'
+	},
+	scriptLoader: {
+		src: './js/loader.js',
+		dest: '../dist/js/',
+		minFileName: 'loader.min.js',
+		maxFileName: 'loader.max.js'
 	}
 };
 
@@ -91,6 +97,22 @@ gulp.task('scripts', function() {
 	gulp.src(paths.scripts.src)
 		.pipe(concat(paths.scripts.maxFileName))
 		.pipe(gulp.dest(paths.scripts.dest));
+});
+
+gulp.task('script-loader', function() {
+
+	// Min
+	gulp.src(paths.scriptLoader.src)
+		.pipe(closureCompiler({
+			compilerPath: 'bower_components/closure-compiler/compiler.jar',
+			fileName: paths.scriptLoader.minFileName
+		}))
+		.pipe(gulp.dest(paths.scriptLoader.dest));
+
+	// Max
+	gulp.src(paths.scriptLoader.src)
+		.pipe(concat(paths.scriptLoader.maxFileName))
+		.pipe(gulp.dest(paths.scriptLoader.dest));
 });
 
 // Rerun the task when a file changes
