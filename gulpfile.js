@@ -12,38 +12,45 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer-core');
 var csswring = require('csswring');
 var spritesmith = require('gulp.spritesmith');
+var jade = require('gulp-jade');
 
 var paths = {
 	styles: {
-		src: './scss/style.scss',
-		toWatch: ['./scss/*.scss'],
-		dest: '../dist/css/',
+		src: './src/scss/style.scss',
+		toWatch: ['./src/scss/*.scss'],
+		dest: './dist/css/',
 		minFileName: 'style.min.css',
 		maxFileName: 'style.max.css',
-		output: '../dist/css/*.css'
+		output: './dist/css/*.css'
 	},
 	sprite: {
-		src: './scss/assets/sprite/*.png',
-		dest: './scss/imports/'
+		src: './src/scss/assets/sprite/*.png',
+		dest: './src/scss/imports/'
 	},
 	html: {
 		src: ['./html/*.html'],
-		toWatch: ['../dist/*.html']
+		toWatch: ['./dist/*.html']
 	},
 	scripts: {
 		src: [
-//            './js/file-01.js',
-//            './js/file-02.js'
+            './src/js/file-01.js'
+//            ,'./js/file-02.js'
         ],
-		dest: '../dist/js/',
+		dest: './dist/js/',
 		minFileName: 'script.min.js',
 		maxFileName: 'script.max.js'
 	},
 	scriptLoader: {
-		src: './js/loader.js',
-		dest: '../dist/js/',
+		src: './src/js/loader.js',
+		dest: './dist/js/',
 		minFileName: 'loader.min.js',
 		maxFileName: 'loader.max.js'
+	},
+	jade: {
+		src: './src/jade/pages/*.jade',
+		dist: './dist/',
+		srcWatch: './src/jade/**/*.jade',
+		distWatch: './dist/*.html'
 	}
 };
 
@@ -115,6 +122,12 @@ gulp.task('script-loader', function() {
 		.pipe(gulp.dest(paths.scriptLoader.dest));
 });
 
+gulp.task('jade', function () {
+	gulp.src(paths.jade.src)
+		.pipe(jade(/*{pretty:true}*/))
+		.pipe(gulp.dest(paths.jade.dist));
+});
+
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     livereload.listen();
@@ -122,9 +135,10 @@ gulp.task('watch', function() {
 	gulp.watch(paths.styles.toWatch, ['sass']);
 	gulp.watch(paths.sprite.src, ['sprite']);
 	gulp.watch(paths.scripts.src, ['scripts']);
+	gulp.watch(paths.jade.srcWatch, ['jade']);
 
+	gulp.watch(paths.jade.distWatch).on('change', livereload.changed);
 	gulp.watch(paths.styles.output).on('change', livereload.changed);
-	gulp.watch(paths.html.toWatch).on('change', livereload.changed);
 });
 
 // The default task (called when you run `gulp` from cli)

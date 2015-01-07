@@ -1,5 +1,5 @@
 {
-  "name": "Frontend Starter Kit",
+  "name": "frontend-starter-kit",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,7 @@
     "gulp-livereload": "^2.1.1",
     "gulp-postcss": "^1.0.2",
     "gulp-sass": "^0.7.3",
-    "gulp.spritesmith": "~0.5.0"
+    "gulp.spritesmith": "~0.5.0",
+    "gulp-jade": "^0.10.0"
   }
 }

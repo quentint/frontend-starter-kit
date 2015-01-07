@@ -1,34 +1,34 @@
 
 // Settings: Global variables, site-wide settings, config switches, etc.
 
-@import "../bower_components/inuit-defaults/settings.defaults";
-@import "../bower_components/inuit-responsive-settings/settings.responsive";
+@import "../../bower_components/inuit-defaults/settings.defaults";
+@import "../../bower_components/inuit-responsive-settings/settings.responsive";
 
 // Tools: Site-wide mixins and functions.
 
-@import "../bower_components/inuit-functions/tools.functions";
-@import "../bower_components/inuit-mixins/tools.mixins";
-@import "../bower_components/inuit-responsive-tools/tools.responsive";
+@import "../../bower_components/inuit-functions/tools.functions";
+@import "../../bower_components/inuit-mixins/tools.mixins";
+@import "../../bower_components/inuit-responsive-tools/tools.responsive";
 
 // Generic: Low-specificity, far-reaching rulesets (e.g. resets).
 
-@import "../bower_components/inuit-normalize/generic.normalize";
-@import "../bower_components/inuit-reset/generic.reset";
-@import "../bower_components/inuit-box-sizing/generic.box-sizing";
-@import "../bower_components/inuit-shared/generic.shared";
+@import "../../bower_components/inuit-normalize/generic.normalize";
+@import "../../bower_components/inuit-reset/generic.reset";
+@import "../../bower_components/inuit-box-sizing/generic.box-sizing";
+@import "../../bower_components/inuit-shared/generic.shared";
 
 // Base: Unclassed HTML elements (e.g. a {}, blockquote {}, address {}).
 
-@import "../bower_components/inuit-page/base.page";
-@import "../bower_components/inuit-headings/base.headings";
-@import "../bower_components/inuit-lists/base.lists";
-@import "../bower_components/inuit-images/base.images";
+@import "../../bower_components/inuit-page/base.page";
+@import "../../bower_components/inuit-headings/base.headings";
+@import "../../bower_components/inuit-lists/base.lists";
+@import "../../bower_components/inuit-images/base.images";
 
 // Objects: Objects, abstractions, and design patterns (e.g. .media {}).
 
-@import "../bower_components/inuit-layout/objects.layout";
-@import "../bower_components/inuit-box/objects.box";
-@import "../bower_components/inuit-media/objects.media";
+@import "../../bower_components/inuit-layout/objects.layout";
+@import "../../bower_components/inuit-box/objects.box";
+@import "../../bower_components/inuit-media/objects.media";
 
 // Components: Discrete, complete chunks of UI (e.g. .carousel {}). This is the one layer that inuitcss doesn’t get involved with.
 
@@ -36,5 +36,5 @@
 
 // Trumps: High-specificity, very explicit selectors. Overrides and helper classes (e.g. .hidden {}).
 
-@import "../bower_components/inuit-widths/trumps.widths";
-@import "../bower_components/inuit-spacing/trumps.spacing";
+@import "../../bower_components/inuit-widths/trumps.widths";
+@import "../../bower_components/inuit-spacing/trumps.spacing";
