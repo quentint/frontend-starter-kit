@@ -142,5 +142,5 @@ gulp.task('watch', function() {
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['sass', 'scripts', 'watch']);
+gulp.task('default', ['jade', 'scripts', 'sass']);
 gulp.task('styles', ['sprite', 'sass']);
